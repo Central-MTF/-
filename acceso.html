@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MTF-HQ | Acceso</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:#0a0f1c;
+    color:white;
+}
+
+header{
+    background:#111827;
+    padding:20px;
+    text-align:center;
+    border-bottom:2px solid #1f2937;
+}
+
+header h1{
+    margin:0;
+    font-size:32px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.card{
+    background:#111827;
+    border:1px solid #1f2937;
+    border-radius:15px;
+    padding:30px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    margin-top:0;
+    color:#60a5fa;
+}
+
+input, select, textarea{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    margin-bottom:20px;
+    border:none;
+    border-radius:10px;
+    background:#1f2937;
+    color:white;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+.info{
+    color:#9ca3af;
+    font-size:14px;
+}
+
+.tag{
+    display:inline-block;
+    background:#1e3a8a;
+    padding:5px 10px;
+    border-radius:20px;
+    margin:5px;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <h1>MTF-HQ</h1>
+    <p>Mobile Task Force Headquarters</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Sistema de Acceso</h2>
+
+<p>
+El Cuartel General MTF opera bajo protocolos internos de disciplina, coordinación y trabajo táctico.
+</p>
+
+<div class="tag">Disciplina</div>
+<div class="tag">Comunidad</div>
+<div class="tag">Acción</div>
+
+</div>
+
+<div class="card">
+
+<h2>Solicitud de Ingreso</h2>
+
+<form>
+
+<label>Nombre de Discord</label>
+<input type="text" placeholder="Usuario#0000">
+
+<label>Nombre de Roblox</label>
+<input type="text" placeholder="Usuario">
+
+<label>Edad</label>
+<input type="number">
+
+<label>Experiencia en SCP:RP</label>
+<select>
+<option>Ninguna</option>
+<option>Básica</option>
+<option>Intermedia</option>
+<option>Avanzada</option>
+</select>
+
+<label>¿Qué división te interesa?</label>
+<select>
+<option>DIT</option>
+<option>DPS</option>
+<option>DIR</option>
+<option>DMR</option>
+<option>DLS</option>
+<option>DCC</option>
+<option>DTS</option>
+<option>DCE</option>
+</select>
+
+<label>¿Cómo reaccionas al recibir órdenes o correcciones?</label>
+<textarea rows="4"></textarea>
+
+<label>¿Por qué quieres unirte al MTF-HQ?</label>
+<textarea rows="4"></textarea>
+
+<label>Confirmación Final</label>
+<input type="text" placeholder='Escribe "MTF"'>
+
+<button type="submit">
+Enviar Solicitud
+</button>
+
+</form>
+
+<p class="info">
+Las solicitudes son revisadas manualmente por el Alto Mando del Cuartel General.
+</p>
+
+</div>
+
+</div>
+
+</body>
+</html>
