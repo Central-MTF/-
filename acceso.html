@@ -28,7 +28,7 @@ header h1{
 }
 
 .container{
-    max-width:900px;
+    max-width:950px;
     margin:auto;
     padding:40px 20px;
 }
@@ -46,6 +46,10 @@ header h1{
     color:#60a5fa;
 }
 
+.card h3{
+    color:#93c5fd;
+}
+
 input, select, textarea{
     width:100%;
     padding:12px;
@@ -58,6 +62,10 @@ input, select, textarea{
     box-sizing:border-box;
 }
 
+textarea{
+    resize:vertical;
+}
+
 button{
     width:100%;
     padding:15px;
@@ -67,6 +75,7 @@ button{
     color:white;
     font-size:18px;
     cursor:pointer;
+    transition:0.2s;
 }
 
 button:hover{
@@ -84,6 +93,43 @@ button:hover{
     padding:5px 10px;
     border-radius:20px;
     margin:5px;
+}
+
+.warning{
+    background:#1e293b;
+    border-left:4px solid #3b82f6;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:25px;
+    color:#cbd5e1;
+}
+
+.section-title{
+    margin-top:40px;
+    margin-bottom:20px;
+    color:#60a5fa;
+    font-size:24px;
+    border-bottom:1px solid #1f2937;
+    padding-bottom:10px;
+}
+
+.division-box{
+    background:#0f172a;
+    border:1px solid #1e293b;
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:15px;
+}
+
+.division-box strong{
+    color:#93c5fd;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:30px;
+    font-size:14px;
 }
 
 </style>
@@ -110,6 +156,12 @@ El Cuartel General MTF opera bajo protocolos internos de disciplina, coordinaci�
 <div class="tag">Comunidad</div>
 <div class="tag">Acción</div>
 
+</div>
+
+<div class="warning">
+⚠️ Toda solicitud es revisada manualmente por el Alto Mando del Cuartel.
+<br><br>
+El acceso puede ser rechazado si la información es falsa, incompleta o si el comportamiento del solicitante no coincide con los estándares del MTF-HQ.
 </div>
 
 <div class="card">
@@ -143,24 +195,34 @@ El Cuartel General MTF opera bajo protocolos internos de disciplina, coordinaci�
 <label>¿Qué división te interesa?</label>
 <select name="Division" required>
 <option value="">Selecciona una división</option>
-<option>DIT</option>
-<option>DPS</option>
-<option>DIR</option>
-<option>DMR</option>
-<option>DLS</option>
-<option>DCC</option>
-<option>DTS</option>
-<option>DCE</option>
+<option>DIT - Intervención Táctica</option>
+<option>DPS - Protección y Seguridad</option>
+<option>DIR - Inteligencia y Reconocimiento</option>
+<option>DMR - Médica y Recuperación</option>
+<option>DLS - Logística y Soporte</option>
+<option>DCC - Comando y Control</option>
+<option>DTS - Tecnología y Sistemas</option>
+<option>DCE - Contención Especializada</option>
 </select>
 
-<label>¿Cómo reaccionas al recibir órdenes o correcciones?</label>
+<label>¿Cómo reaccionas al recibir órdenes o correcciones dentro de un equipo?</label>
 <textarea name="Ordenes" rows="4" required></textarea>
 
 <label>¿Por qué quieres unirte al MTF-HQ?</label>
 <textarea name="Motivo" rows="4" required></textarea>
 
+<label>¿Qué consideras más importante dentro de una unidad táctica?</label>
+<select name="Importancia" required>
+<option value="">Selecciona una opción</option>
+<option>Disciplina</option>
+<option>Trabajo en equipo</option>
+<option>Liderazgo</option>
+<option>Eficiencia operativa</option>
+<option>Lealtad</option>
+</select>
+
 <label>Confirmación Final</label>
-<input type="text" name="Confirmacion" placeholder='Escribe "MTF"' required>
+<input type="text" name="Confirmacion" placeholder='Escribe únicamente: MTF' required>
 
 <button type="submit">
 Enviar Solicitud
@@ -169,11 +231,75 @@ Enviar Solicitud
 </form>
 
 <p class="info">
-Las solicitudes son revisadas manualmente por el Alto Mando del Cuartel General.
+Las solicitudes pueden tardar dependiendo de la disponibilidad del Alto Mando.
 </p>
 
 </div>
 
+<div class="section-title">
+Información de Divisiones
+</div>
+
+<div class="division-box">
+<strong>DIT — División de Intervención Táctica</strong>
+<p>
+Operaciones de combate directo, recuperación de zonas y neutralización de amenazas activas.
+</p>
+</div>
+
+<div class="division-box">
+<strong>DPS — División de Protección y Seguridad</strong>
+<p>
+Protección de personal clave, seguridad de instalaciones y control operativo.
+</p>
+</div>
+
+<div class="division-box">
+<strong>DIR — División de Inteligencia y Reconocimiento</strong>
+<p>
+Reconocimiento táctico, recopilación de información y vigilancia estratégica.
+</p>
+</div>
+
+<div class="division-box">
+<strong>DMR — División Médica y Recuperación</strong>
+<p>
+Atención médica en combate, estabilización y evacuación de operativos.
+</p>
+</div>
+
+<div class="division-box">
+<strong>DLS — División de Logística y Soporte</strong>
+<p>
+Suministro de recursos, transporte y coordinación de apoyo operativo.
+</p>
+</div>
+
+<div class="division-box">
+<strong>DCC — División de Comando y Control</strong>
+<p>
+Coordinación táctica, supervisión de despliegues y liderazgo operativo.
+</p>
+</div>
+
+<div class="division-box">
+<strong>DTS — División de Tecnología y Sistemas</strong>
+<p>
+Soporte técnico, comunicaciones, sistemas y mantenimiento tecnológico.
+</p>
+</div>
+
+<div class="division-box">
+<strong>DCE — División de Contención Especializada</strong>
+<p>
+Manejo y control de anomalías complejas o de alto riesgo.
+</p>
+</div>
+
+</div>
+
+<div class="footer">
+MTF-HQ • Mobile Task Force Headquarters
 </div>
 
 </body>
