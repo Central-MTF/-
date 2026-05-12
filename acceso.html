@@ -55,6 +55,7 @@ input, select, textarea{
     border-radius:10px;
     background:#1f2937;
     color:white;
+    box-sizing:border-box;
 }
 
 button{
@@ -87,6 +88,7 @@ button:hover{
 
 </style>
 </head>
+
 <body>
 
 <header>
@@ -97,6 +99,7 @@ button:hover{
 <div class="container">
 
 <div class="card">
+
 <h2>Sistema de Acceso</h2>
 
 <p>
@@ -113,19 +116,24 @@ El Cuartel General MTF opera bajo protocolos internos de disciplina, coordinaci�
 
 <h2>Solicitud de Ingreso</h2>
 
-<form>
+<form action="https://formsubmit.co/trexprofalconsmz@gmail.com" method="POST">
+
+<input type="hidden" name="_captcha" value="false">
+
+<input type="hidden" name="_next" value="https://t-rex-pro.github.io/-/">
 
 <label>Nombre de Discord</label>
-<input type="text" placeholder="Usuario#0000">
+<input type="text" name="Discord" placeholder="Usuario#0000" required>
 
 <label>Nombre de Roblox</label>
-<input type="text" placeholder="Usuario">
+<input type="text" name="Roblox" placeholder="Usuario" required>
 
 <label>Edad</label>
-<input type="number">
+<input type="number" name="Edad" required>
 
 <label>Experiencia en SCP:RP</label>
-<select>
+<select name="Experiencia" required>
+<option value="">Selecciona una opción</option>
 <option>Ninguna</option>
 <option>Básica</option>
 <option>Intermedia</option>
@@ -133,7 +141,8 @@ El Cuartel General MTF opera bajo protocolos internos de disciplina, coordinaci�
 </select>
 
 <label>¿Qué división te interesa?</label>
-<select>
+<select name="Division" required>
+<option value="">Selecciona una división</option>
 <option>DIT</option>
 <option>DPS</option>
 <option>DIR</option>
@@ -145,13 +154,13 @@ El Cuartel General MTF opera bajo protocolos internos de disciplina, coordinaci�
 </select>
 
 <label>¿Cómo reaccionas al recibir órdenes o correcciones?</label>
-<textarea rows="4"></textarea>
+<textarea name="Ordenes" rows="4" required></textarea>
 
 <label>¿Por qué quieres unirte al MTF-HQ?</label>
-<textarea rows="4"></textarea>
+<textarea name="Motivo" rows="4" required></textarea>
 
 <label>Confirmación Final</label>
-<input type="text" placeholder='Escribe "MTF"'>
+<input type="text" name="Confirmacion" placeholder='Escribe "MTF"' required>
 
 <button type="submit">
 Enviar Solicitud
