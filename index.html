@@ -3,62 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MTF HQ</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial;
-    background: #0b0f14;
-    color: white;
-    text-align: center;
-}
+<title>Central del Cuartel General MTF</title>
 
-h1 {
-    margin-top: 50px;
-    font-size: 50px;
-}
+<link rel="stylesheet" href="style.css">
 
-.menu {
-    margin-top: 50px;
-}
-
-.menu a {
-    display: block;
-    margin: 15px auto;
-    width: 300px;
-    padding: 15px;
-    background: #111827;
-    color: #38bdf8;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 20px;
-}
-
-.menu a:hover {
-    background: #1f2937;
-}
-</style>
 </head>
 
 <body>
 
-<h1>Cuartel General MTF</h1>
-<p>Selecciona una sección</p>
+<div class="background-grid"></div>
 
-<div class="menu">
-    <a href="lore.html">Lore</a>
-    <a href="objetivos.html">Objetivos</a>
-    <a href="funciones.html">Funciones</a>
-    <a href="integracion.html">Integraciones</a>
-    <a href="divisiones_hq.html">Divisiones HQ</a>
-    <a href="divisiones_mtf.html">Divisiones MTF</a>
-    <a href="clasificacion.html">Clasificación</a>
-    <a href="despliegue.html">Despliegue</a>
-    <a href="protocolos.html">Protocolos</a>
-    <a href="acceso.html">ACCESO AL CUARTEL</a>
-</a>
+<header class="topbar">
+
+<div class="logo-section">
+<h1>MTF-HQ</h1>
+<p>Central del Cuartel General</p>
 </div>
+
+<nav>
+<a href="login.html" class="access-btn">
+ACCEDER A LA RED
+</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h2>
+Sistema Centralizado de Información y Operaciones
+</h2>
+
+<p>
+El Cuartel General MTF coordina operaciones, entrenamientos, inteligencia y despliegues tácticos relacionados con las fuerzas especiales de la Fundación SCP.
+</p>
+
+<div class="hero-buttons">
+
+<a href="login.html" class="main-btn">
+Ingresar
+</a>
+
+<a href="#info" class="secondary-btn">
+Más Información
+</a>
+
+</div>
+
+</section>
+
+<section class="cards" id="info">
+
+<div class="card">
+<h3>Operaciones</h3>
+<p>
+Coordinación táctica y despliegue de unidades especializadas.
+</p>
+</div>
+
+<div class="card">
+<h3>Entrenamientos</h3>
+<p>
+Sistema progresivo basado en rangos y niveles operativos.
+</p>
+</div>
+
+<div class="card">
+<h3>Inteligencia</h3>
+<p>
+Recopilación, análisis y control de información clasificada.
+</p>
+</div>
+
+<div class="card">
+<h3>Central</h3>
+<p>
+Administración, expedientes y control operativo interno.
+</p>
+</div>
+
+</section>
+
+<script src="script.js"></script>
 
 </body>
 </html>
