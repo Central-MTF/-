@@ -4,111 +4,144 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Central del Cuartel General MTF</title>
+<title>Acceso a la Red</title>
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
-}
-
 body{
-background:black;
-overflow:hidden;
-color:white;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-position:relative;
+    margin:0;
+    background:#05070d;
+    font-family:Arial;
+    overflow:hidden;
+    color:white;
 }
 
-canvas{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:0;
+/* FONDO */
+
+.background{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at center,
+    rgba(255,0,0,0.08),
+    transparent 70%);
+    animation:pulse 8s infinite;
 }
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.1);}
+    100%{transform:scale(1);}
+}
+
+/* GRID */
+
+.grid{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size:40px 40px;
+}
+
+/* LOGIN */
 
 .container{
-position:relative;
-z-index:2;
-width:420px;
-background:rgba(10,10,15,0.90);
-border:1px solid #300000;
-padding:40px;
-border-radius:15px;
-box-shadow:0 0 30px rgba(255,0,0,0.2);
-backdrop-filter:blur(8px);
+    position:relative;
+    z-index:2;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-h1{
-text-align:center;
-margin-bottom:10px;
-font-size:28px;
-color:#ff2a2a;
+.box{
+    width:420px;
+    background:rgba(10,15,25,0.95);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:40px;
+    backdrop-filter:blur(10px);
 }
 
-.sub{
-text-align:center;
-margin-bottom:30px;
-color:#999;
-font-size:14px;
+.logo{
+    text-align:center;
+    font-size:32px;
+    color:#ff2d2d;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#777;
+    margin-bottom:30px;
+}
+
+.input-group{
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    color:#888;
 }
 
 input{
-width:100%;
-padding:14px;
-margin-bottom:20px;
-background:#111;
-border:1px solid #300000;
-border-radius:10px;
-color:white;
-font-size:15px;
-}
-
-input:focus{
-outline:none;
-border-color:red;
-box-shadow:0 0 10px rgba(255,0,0,0.4);
+    width:100%;
+    padding:14px;
+    background:#080b12;
+    border:1px solid rgba(255,255,255,0.08);
+    color:white;
+    box-sizing:border-box;
 }
 
 button{
-width:100%;
-padding:14px;
-border:none;
-border-radius:10px;
-background:#7a0000;
-color:white;
-font-size:16px;
-cursor:pointer;
-transition:0.3s;
+    width:100%;
+    padding:15px;
+    border:none;
+    background:#ff2d2d;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
 }
 
 button:hover{
-background:#aa0000;
+    background:#ff4d4d;
 }
 
-.status{
-margin-top:20px;
-text-align:center;
-font-size:14px;
-color:#888;
+.msg{
+    margin-top:20px;
+    text-align:center;
+    color:#00ff88;
 }
 
-.warning{
-position:absolute;
-top:20px;
-left:20px;
-z-index:2;
-font-size:12px;
-color:red;
-opacity:0.7;
+.link{
+    margin-top:20px;
+    text-align:center;
+}
+
+.link a{
+    color:#888;
+    text-decoration:none;
+}
+
+.link a:hover{
+    color:white;
+}
+
+/* TERMINAL */
+
+.terminal{
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    color:#00ff88;
+    font-size:12px;
+    opacity:0.7;
 }
 
 </style>
@@ -116,37 +149,55 @@ opacity:0.7;
 
 <body>
 
-<div class="warning">
-[ CENTRAL-MTF NETWORK ]
-</div>
-
-<canvas id="bg"></canvas>
+<div class="background"></div>
+<div class="grid"></div>
 
 <div class="container">
 
-<h1>ACCEDER A LA RED</h1>
+<div class="box">
 
-<div class="sub">
+<div class="logo">
+[ ACCEDER A LA RED ]
+</div>
+
+<div class="subtitle">
 Central del Cuartel General MTF
 </div>
 
-<input type="email" id="email" placeholder="Correo Operativo">
+<div class="input-group">
+<label>Correo</label>
+<input type="email" id="email">
+</div>
 
-<input type="password" id="password" placeholder="Contraseña">
+<div class="input-group">
+<label>Contraseña</label>
+<input type="password" id="password">
+</div>
 
 <button onclick="login()">
 ACCEDER
 </button>
 
-<div class="status" id="status">
-Esperando autenticación...
+<div class="msg" id="msg"></div>
+
+<div class="link">
+<a href="register.html">
+Crear Cuenta Operativa
+</a>
 </div>
 
+</div>
+
+</div>
+
+<div class="terminal" id="terminal">
+Inicializando sistema...
 </div>
 
 <script type="module">
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
 
 import {
 getAuth,
@@ -155,12 +206,12 @@ signInWithEmailAndPassword
 from "https://www.gstatic.com/firebasejs/12.13.0/firebase-auth.js";
 
 const firebaseConfig = {
-apiKey: "AIzaSyCMSkWW4wnzFoXtqA5o3a1Q1Y_xrweW_do",
-authDomain: "central-mtf.firebaseapp.com",
-projectId: "central-mtf",
-storageBucket: "central-mtf.firebasestorage.app",
-messagingSenderId: "565940103815",
-appId: "1:565940103815:web:0ceea344d9abf133af6622"
+  apiKey: "AIzaSyCMSkWW4wnzFoXtqA5o3a1Q1Y_xrweW_do",
+  authDomain: "central-mtf.firebaseapp.com",
+  projectId: "central-mtf",
+  storageBucket: "central-mtf.firebasestorage.app",
+  messagingSenderId: "565940103815",
+  appId: "1:565940103815:web:0ceea344d9abf133af6622"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -169,73 +220,68 @@ const auth = getAuth(app);
 
 window.login = async function(){
 
-const email = document.getElementById("email").value;
-const password = document.getElementById("password").value;
-const status = document.getElementById("status");
+const email =
+document.getElementById("email").value;
 
-status.innerHTML = "Verificando acceso...";
+const password =
+document.getElementById("password").value;
 
 try{
 
-await signInWithEmailAndPassword(auth,email,password);
+await signInWithEmailAndPassword(
+auth,
+email,
+password
+);
 
-status.innerHTML = "Acceso concedido.";
+document.getElementById("msg").innerHTML =
+"✔ Acceso concedido";
+
+setTimeout(()=>{
 
 window.location.href = "dashboard.html";
 
-}catch(error){
+},2000);
 
-status.innerHTML = "Acceso denegado.";
+}
+
+catch(error){
+
+document.getElementById("msg").innerHTML =
+"Acceso denegado";
 
 }
 
 }
 
-const canvas = document.getElementById("bg");
-const ctx = canvas.getContext("2d");
+/* TERMINAL FAKE */
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+const lines = [
 
-let particles = [];
+"Conectando con CENTRAL-MTF...",
+"Verificando credenciales...",
+"Cargando protocolos tácticos...",
+"Inicializando red interna...",
+"Esperando autorización..."
 
-for(let i=0;i<120;i++){
+];
 
-particles.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-vx:(Math.random()-0.5)*0.5,
-vy:(Math.random()-0.5)*0.5,
-size:Math.random()*2
-});
+let i = 0;
 
-}
+setInterval(()=>{
 
-function animate(){
+document.getElementById("terminal").innerHTML =
+lines[i];
 
-ctx.clearRect(0,0,canvas.width,canvas.height);
+i++;
 
-ctx.fillStyle="red";
+if(i >= lines.length){
 
-particles.forEach(p=>{
-
-p.x+=p.vx;
-p.y+=p.vy;
-
-if(p.x<0||p.x>canvas.width)p.vx*=-1;
-if(p.y<0||p.y>canvas.height)p.vy*=-1;
-
-ctx.beginPath();
-ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-ctx.fill();
-
-});
-
-requestAnimationFrame(animate);
+i = 0;
 
 }
 
-animate();
+},2000);
 
 </script>
 
