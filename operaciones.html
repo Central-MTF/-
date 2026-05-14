@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Operaciones | CENTRAL MTF</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#05070d;
+color:white;
+display:flex;
+height:100vh;
+overflow:hidden;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+width:270px;
+background:#0b111c;
+border-right:1px solid rgba(255,0,0,0.15);
+padding:20px;
+display:flex;
+flex-direction:column;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#ff2d2d;
+margin-bottom:30px;
+}
+
+.menu{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.menu a{
+padding:14px;
+text-decoration:none;
+color:#ccc;
+background:#101826;
+border:1px solid rgba(255,255,255,0.05);
+transition:0.3s;
+}
+
+.menu a:hover{
+background:#161f30;
+color:white;
+border-color:#ff2d2d;
+}
+
+.active{
+background:#1a2335 !important;
+border-color:#ff2d2d !important;
+color:white !important;
+}
+
+/* MAIN */
+
+.main{
+flex:1;
+overflow-y:auto;
+padding:30px;
+}
+
+/* TOP */
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:30px;
+}
+
+.status{
+padding:10px 18px;
+background:#1d0f0f;
+border:1px solid #ff2d2d;
+color:#ff4d4d;
+font-weight:bold;
+}
+
+/* CARDS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:20px;
+}
+
+.card{
+background:#0b111c;
+border:1px solid rgba(255,255,255,0.08);
+padding:25px;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:4px;
+height:100%;
+background:#ff2d2d;
+}
+
+.card h2{
+margin-bottom:15px;
+color:#ff4d4d;
+}
+
+.operation-status{
+display:inline-block;
+padding:6px 12px;
+background:#122013;
+color:#00ff88;
+margin-bottom:15px;
+font-size:14px;
+}
+
+.operation-danger{
+background:#291313;
+color:#ff5c5c;
+}
+
+.operation-medium{
+background:#2c220d;
+color:#ffb347;
+}
+
+.info{
+color:#aaa;
+line-height:1.6;
+font-size:15px;
+}
+
+/* TERMINAL */
+
+.terminal{
+margin-top:30px;
+background:black;
+padding:20px;
+border:1px solid rgba(0,255,100,0.2);
+height:180px;
+overflow:hidden;
+font-family:monospace;
+color:#00ff88;
+}
+
+.line{
+margin-bottom:8px;
+animation:flicker 1.5s infinite;
+}
+
+@keyframes flicker{
+0%{opacity:1;}
+50%{opacity:0.8;}
+100%{opacity:1;}
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+body{
+flex-direction:column;
+}
+
+.sidebar{
+width:100%;
+height:auto;
+border-right:none;
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">
+CENTRAL MTF
+</div>
+
+<div class="menu">
+
+<a href="dashboard.html">Dashboard</a>
+
+<a href="operaciones.html" class="active">
+Operaciones
+</a>
+
+<a href="#">Comunicados</a>
+<a href="#">Entrenamientos</a>
+<a href="#">Expedientes</a>
+<a href="#">Logs Operativos</a>
+<a href="#">Archivos Tácticos</a>
+<a href="#">Noticias Internas</a>
+<a href="#">Sistema Interno</a>
+<a href="#">Configuración</a>
+
+</div>
+
+</div>
+
+<div class="main">
+
+<div class="topbar">
+
+<h1>OPERACIONES ACTIVAS</h1>
+
+<div class="status">
+🔴 NIVEL OPERATIVO ACTIVO
+</div>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h2>Operación Black Echo</h2>
+
+<div class="operation-status">
+ACTIVA
+</div>
+
+<p class="info">
+Unidad DIT desplegada en zona crítica.
+Objetivo:
+asegurar área comprometida y estabilizar actividad hostil.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Patrullaje Interno</h2>
+
+<div class="operation-status operation-medium">
+MONITOREO
+</div>
+
+<p class="info">
+PM realizando inspección interna y vigilancia táctica
+sobre personal operativo.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Investigación Externa</h2>
+
+<div class="operation-status">
+PI ACTIVA
+</div>
+
+<p class="info">
+Seguimiento de individuos y recopilación de información
+de interés para CENTRAL-MTF.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Operación Silent Grid</h2>
+
+<div class="operation-status operation-danger">
+ALERTA
+</div>
+
+<p class="info">
+Posible filtración de información detectada.
+Departamento Interno movilizado.
+</p>
+
+</div>
+
+</div>
+
+<div class="terminal">
+
+<div class="line">
+[ CENTRAL ] Conectando unidades tácticas...
+</div>
+
+<div class="line">
+[ PI ] Información clasificada recibida...
+</div>
+
+<div class="line">
+[ PM ] Vigilancia interna activa...
+</div>
+
+<div class="line">
+[ SISTEMA ] Escaneando actividad operativa...
+</div>
+
+<div class="line">
+[ RED ] Enlace seguro establecido...
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
